@@ -1,0 +1,154 @@
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+$bp-smaller: 31.25em; // 500px 
+$bp-smallest: 28.125em; // 450px
+
+// * { outline: 1px dashed red !important; outline-offset: 0 !important;}
+
+@media only screen and (max-width: $bp-largest) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: $bp-large) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: $bp-medium) {
+  .content {
+    flex-direction: column;
+  }
+  .side-nav {
+    flex-direction: row;
+    margin: 0;
+    gap: 0;
+    
+    &__link:link,
+    &__link:visited {
+      justify-content: center;
+      padding: 2rem;
+    }
+    &__item {
+      flex: 1;
+    }
+  }
+  .legal {
+    display: none;
+  }
+  .detail {
+    padding: 3rem;
+    gap: 3rem;
+  }
+  .description {
+    padding: 2rem;
+  }
+  .review {
+    padding: 2rem;
+  }
+  .cta {
+    padding: 2.5rem 0;
+  }
+}
+
+@media only screen and (max-width: $bp-small) {
+  .detail {
+    flex-direction: column;
+  }
+  .side-nav {
+    &__link {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
+    &__icon {
+      margin: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .overview {
+    &__heading {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
+    &__rating {
+      padding: 0 1.5rem;
+    }
+    &__rating-average {
+      font-size: 1.8rem;
+    }
+    &__rating-count {
+      font-size: 0.5rem;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp-smaller) {
+  .header {
+    height: 11rem;
+    align-content: space-around;
+    flex-wrap: wrap;
+  }
+  .search {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--color-gray-light-2);
+  }
+}
+
+@media only screen and (max-width: $bp-smallest) {
+  .side-nav {
+    &__text {
+      font-size: 1rem;
+    }
+    &__icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  
+  .list {
+    flex-direction: column;
+  }
+  
+  .overview {
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0 0 0;
+    gap: 1rem;
+  
+    &__heading {
+      padding: 0;
+    }
+    &__stars {
+      display: flex;
+      margin: 0;
+    }
+    &__icon {
+      $size: 3rem;
+      width: $size;
+      height: $size;
+    }
+    &__rating {
+      margin-left: 0;
+      padding: 0.6rem 0 1rem 0;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+    &__rating-average {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    &__rating-count {
+      font-size: 1.3rem;
+    }
+  }
+}
